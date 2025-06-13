@@ -19,6 +19,8 @@ function addTask(title) {
         title: title,
         isDone: false
     };
+
+    
     tasks.push(task);
     drawTask(task, tasks.length - 1);
 }
