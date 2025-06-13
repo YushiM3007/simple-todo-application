@@ -15,11 +15,10 @@ let tasks = [
  * 
  */
 function addTask(title) {
-    const task = { isDone: false }
-
-    // やることのタイトルを設定(このままだと、すべてのタイトルがHello Worldになってしまう！)
-    task.title = "Hello World"
-
+    const task = { 
+        title: title,
+        isDone: false
+    };
     // 以降は無視して良い
     tasks.push(task);
     drawTask(task, tasks.length - 1);
@@ -66,9 +65,7 @@ function onUpdateIsDone(task) {
 function onTaskTitleClicked(task) {
     console.log("タイトルがクリックされました。", task);
 
-    // 達成状態を更新(このままだと、現在の達成状態で更新されてしまう！)
-    const currentValue = task.isDone;
-    task.isDone = currentValue;
+    task.isDone = !task.isDone;
 
     return task;
 }
